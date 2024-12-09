@@ -15,10 +15,7 @@ def get_blocks(line):
     isFile = True
     n = 0
     for c in line:
-        size = int(c)
-        for _ in range(size):
-            blocks.append(n if isFile else None)
-
+        blocks.extend([n if isFile else None] * int(c))
         if isFile:
             n += 1
 
